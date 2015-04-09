@@ -1,0 +1,36 @@
+1.下载sonarqube 安装包
+解压安装包到如：F:\Work\
+在F:\Work\sonarqube\bin\windows-x86-32双击StartSonar.bat 有错怎么办？安装jre
+下载jre 并安装。
+2.下载sonar runner
+解压安装包到如：F:\Work\sonar runner
+在双击F:\Work\sonar runner\bin\sonar-runner.bat
+在地址栏中输入http://localhost:9000/查看sonar是否成功。
+3.在wapper.conf中加入
+3在setting中安装C#,
+
+
+
+
+
+
+
+安装mysql后服务中没有mysql服务怎么办？cmd下 到mysql安装的文件夹下../bin/,然后执行mysqld.exe -install 出现install/remove mysql denied,怎么办？cmd以管理员身份运行
+服务启动后在cmd中mysql路径../bin/下 输入mysql -u root -p 连接成功。出现mysql>
+输入:
+
+CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE USER 'sonar' IDENTIFIED BY 'sonar';
+
+GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
+
+GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
+
+FLUSH PRIVILEGES;
+
+
+
+Unable to determine database dialect to use within sonar with dialect null jdbc url ？
+Dsonar.jdbc.url=sonar.jdbc.url=sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8
+Dsonar.jdbc.url=sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8
