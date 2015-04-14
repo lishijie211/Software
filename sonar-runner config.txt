@@ -1,0 +1,39 @@
+Installation
+Uncompress the downloaded file into the directory of your choice. We'll refer to it as <install_directory> in the next steps.
+ 
+Update the global settings (database connection, server URL) by editing <install_directory>/conf/sonar-runner.properties:
+#----- Default SonarQube server
+#sonar.host.url=http://localhost:9000
+ 
+#----- PostgreSQL
+#sonar.jdbc.url=jdbc:postgresql://localhost/sonar
+ 
+#----- MySQL
+#sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8
+ 
+#----- Oracle
+#sonar.jdbc.url=jdbc:oracle:thin:@localhost/XE
+ 
+#----- Microsoft SQLServer
+#sonar.jdbc.url=jdbc:jtds:sqlserver://localhost/sonar;SelectMethod=Cursor
+ 
+#----- Global database settings
+#sonar.jdbc.username=sonar
+#sonar.jdbc.password=sonar
+ 
+ 
+Create a new SONAR_RUNNER_HOME environment variable set to <install_directory>.
+ 
+Add the <install_directory>/bin directory to your path.
+ 
+You can check the basic installation by opening a new shell and executing the command sonar-runner -h (on Windows platform the command is sonar-runner.bat -h) . You should get a message like this:
+usage: sonar-runner [options]
+ 
+Options:
+ -D,--define <arg>     Define property
+ -e,--errors           Produce execution error messages
+ -h,--help             Display help information
+ -v,--version          Display version information
+ -X,--debug            Produce execution debug output
+If you need more debug information you can add the sonar.verbose property by adding the command line parameter -Dsonar.verbose=true.
+You are now ready to analyze a project with the SonarQube Runner.
